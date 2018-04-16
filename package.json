@@ -1,0 +1,15 @@
+{
+  "name": "wabisabi-app",
+  "version": "0.0.1",
+  "description": "wabisabi frontend app ",
+  "main": "index.js",
+  "repository": "git@github.com:kendaganio/wabisabi-app.git",
+  "author": "Ken-Lauren Daganio <akosiken@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "babel-loader": "^8.0.0-beta",
+    "webpack": "^4.5.0"
+  }
+}
