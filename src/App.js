@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Login from "./containers/Login/";
+import Login from "./containers/Login";
+import Landing from "./containers/Landing";
 import "corgicss/css/corgi.css";
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={Landing} />
+          <Route path="/login" component={Login} />
         </div>
       </Router>
     );
