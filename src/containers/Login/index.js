@@ -1,15 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { authRequest } from "../../actions/auth";
 
 class Login extends Component {
   submit(e) {
     e.preventDefault();
-    console.log(e);
+    this.props.authRequest({
+      email: "akosiken@gmail.com",
+      password: "gago123"
+    });
   }
 
   render() {
     return (
       <div className="container">
-        <form className="form" onSubmit={this.submit}>
+        <form className="form" onSubmit={this.submit.bind(this)}>
           <fieldset>
             <label htmlFor="username">Username</label>
             <input type="text" name="username" />
@@ -27,4 +32,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect(state => state, { authRequest })(Login);
