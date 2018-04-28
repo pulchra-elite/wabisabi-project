@@ -1,10 +1,13 @@
 import axios from "axios";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { authSuccess, authError } from "../../actions/auth";
+import { getConfig } from "../../config";
+
+const config = getConfig();
 
 function fetchUser(user) {
   axios
-    .post("//localhost:3000/api/v1/auth", {
+    .post(`${config.API_HOST}/auth`, {
       email: user.email,
       password: user.password
     })

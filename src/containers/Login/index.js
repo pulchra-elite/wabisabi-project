@@ -5,9 +5,11 @@ import { authRequest } from "../../actions/auth";
 class Login extends Component {
   submit(e) {
     e.preventDefault();
+
+    // probably need to add formik at some point
     this.props.authRequest({
-      email: "akosiken@gmail.com",
-      password: "gago123"
+      email: "email",
+      password: "password"
     });
   }
 
