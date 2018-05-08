@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware } from "redux";
 import logger from "redux-logger";
 import createSagaMiddleware from "redux-saga";
-import { fork } from "redux-saga/effects";
+import { all } from "redux-saga/effects";
 
 import authSaga from "./containers/Login/saga";
 
 const rootSaga = function*() {
-  yield [fork(authSaga)];
+  yield all([authSaga()]);
 };
 
 const sagaMiddleware = createSagaMiddleware(...rootSaga);

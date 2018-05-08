@@ -6,7 +6,7 @@ import { getConfig } from "../../config";
 const config = getConfig();
 
 function fetchUser(user) {
-  axios
+  return axios
     .post(`${config.API_HOST}/auth`, {
       email: user.email,
       password: user.password
@@ -26,8 +26,6 @@ function* authenticateUser(action) {
   }
 }
 
-function* authSaga() {
+export default function* authSaga() {
   yield takeLatest("USER_FETCH_REQUESTED", authenticateUser);
 }
-
-export default authSaga;

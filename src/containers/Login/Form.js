@@ -12,6 +12,7 @@ const InnerForm = ({
 }) => (
   <form className="form" onSubmit={handleSubmit}>
     <fieldset>
+      {isSubmitting ? "submitting" : ""}
       <label htmlFor="username">Username</label>
       <input
         type="text"
@@ -24,7 +25,7 @@ const InnerForm = ({
 
       <label htmlFor="username">Password</label>
       <input
-        type="text"
+        type="password"
         name="password"
         onChange={handleChange}
         onBlur={handleBlur}
